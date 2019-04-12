@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<h1>IMDB results</h1>
+
+<button><a href="/">New search?</a></button>
+
+<% if (!data['Error']) { %>
+
+    <% data['Search'].forEach( (movie) => { %>
+       <p> <img src='<%= movie['Poster'] %>' width='150px' height='150px'> <strong></b><%= movie['Title'] %></strong> - <%= movie['Year'] %> - <a href="https://www.imdb.com/title/<%= movie['imdbID'] %>" target="_blank" rel="noopener nofollow">More info</a> </p>
+    <% }) %>
+    
+    <% } else { %>
+        <p>Sorry, no movies with your search term!</p>
+    <% } %>
+    
+<% include partials/footer %>
