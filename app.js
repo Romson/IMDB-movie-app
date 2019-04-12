@@ -10,14 +10,10 @@ app.use(express.static('public'));
 // Serve ejs files
 app.set('view engine', 'ejs');
 
-
-// 2 Routes -> Search en Results
-
 // Search Route. Redirects to results route with 'keyword' as variable in request url -> ?s[keyword].
 app.get('/', (req, res) => {
    res.render('search'); 
 });
-
 
 // Results Route
 app.get('/results', (req, res) => {
